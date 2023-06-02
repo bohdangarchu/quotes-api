@@ -15,6 +15,7 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
 import io.micronaut.http.annotation.QueryValue
 import jakarta.inject.Inject
+import kotlin.coroutines.coroutineContext
 
 @Controller("/quotes")
 class RestController {
@@ -31,12 +32,15 @@ class RestController {
     @Produces(MediaType.APPLICATION_JSON)
     fun getQuotes(@QueryValue(defaultValue = "5") n: Int): List<Quote> {
         var numbers = numberPartitionService.partitionNumber(n)
-        println(numbers.first)
-        println(numbers.second)
-        println(numbers.third)
         return breakingBadQuoteService.getQuotes(numbers.first) +
                 gotQuoteService.getQuotes(numbers.second) +
                 luciferQuoteService.getQuotes(numbers.third)
+    }
+
+    @Get("/hello")
+    @Produces(MediaType.TEXT_PLAIN)
+    fun getHello(): String {
+        return "hello"
     }
 
 

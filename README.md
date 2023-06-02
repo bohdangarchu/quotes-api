@@ -1,14 +1,20 @@
-## Micronaut 3.9.2 Documentation
+## Usage
+run the app with
+```bash
+./mvnw mn:run
+```
+run tests
+```bash
+./mvnw test
+```
 
-- [User Guide](https://docs.micronaut.io/3.9.2/guide/index.html)
-- [API Reference](https://docs.micronaut.io/3.9.2/api/index.html)
-- [Configuration Reference](https://docs.micronaut.io/3.9.2/guide/configurationreference.html)
-- [Micronaut Guides](https://guides.micronaut.io/index.html)
----
+## Endpoints
 
-- [Micronaut Maven Plugin documentation](https://micronaut-projects.github.io/micronaut-maven-plugin/latest/)
-## Feature http-client documentation
-
-- [Micronaut HTTP Client documentation](https://docs.micronaut.io/latest/guide/index.html#httpClient)
+- `GET /quotes?n={number}`: returns {number} of random quotes from Breaking Bad, Lucifer or GOT.
 
 
+## Issues
+
+- could not inject HttpClient using @Inject and @Client annotations
+
+- testing the http endpoint doesn't work 
