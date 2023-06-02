@@ -1,0 +1,19 @@
+lucifer:
+  organization: micronaut-projects
+  repo: micronaut-core
+
+micronaut:
+  application:
+    name: quotesApi
+  http:
+    services:
+      lucifer:
+        url: 'https://lucifer-quotes.vercel.app'
+    client:
+      default:
+        connect-timeout: 10s
+        read-timeout: 10s
+netty:
+  default:
+    allocator:
+      max-order: 3
