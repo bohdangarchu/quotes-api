@@ -1,9 +1,5 @@
 package com.app.controller
 
-//import com.app.domain.Quote
-//import com.app.service.BreakingBadQuoteService
-//import com.app.service.GameOfThronesQuoteService
-//import com.app.service.NumberPartitionService
 import com.app.domain.Quote
 import com.app.service.math.NumberPartitionService
 import com.app.service.quotes.BreakingBadQuoteService
@@ -15,7 +11,6 @@ import io.micronaut.http.annotation.Get
 import io.micronaut.http.annotation.Produces
 import io.micronaut.http.annotation.QueryValue
 import jakarta.inject.Inject
-import kotlin.coroutines.coroutineContext
 
 @Controller("/quotes")
 class RestController {

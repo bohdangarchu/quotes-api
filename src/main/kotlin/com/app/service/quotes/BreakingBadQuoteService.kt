@@ -10,10 +10,8 @@ import java.net.URL
 @Singleton
 class BreakingBadQuoteService : QuoteService {
 
-    private val url = URI.create("https://api.breakingbadquotes.xyz").toURL()
-
     // @Inject @Client("https://api.breakingbadquotes.xyz") private lateinit var client: HttpClient
-    private val client = HttpClient.create(url)
+    private val client = HttpClient.create(URL("https://api.breakingbadquotes.xyz"))
 
     override fun getQuotes(number: Int): List<Quote> {
         val request = HttpRequest.GET<Any>("/v1/quotes/$number")
